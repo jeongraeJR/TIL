@@ -9,3 +9,13 @@ source venv/bin/activate
 ## template
 - 프리젠테이션과 비즈니스 로직을 구분하는데 도움이 된다.
 - 응용 프로그램 패키지 안에 있는 템플릿 폴더에 저장된다.
+
+## 필요 라이브러리 설정
+- 개발환경 셋팅 후 requirements.txt 를 만듦
+```
+pip3 list > requirements.txt
+```
+- requirements.txt를 사용하여 필요한 패키지 한꺼번에 다운로드
+```
+pip3 install -r requirements.txt
+```
