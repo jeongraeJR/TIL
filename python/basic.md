@@ -15,6 +15,10 @@ source venv/bin/activate
 ```
 pip3 list > requirements.txt
 ```
+또는
+```
+pip3 freeze > requirements.txt
+```
 - requirements.txt를 사용하여 필요한 패키지 한꺼번에 다운로드
 ```
 pip3 install -r requirements.txt
