@@ -24,3 +24,14 @@ pip3 freeze > requirements.txt
 ```
 pip3 install -r requirements.txt
 ```
+
+## list객체 json형태로 응답하기
+### json util import
+```
+from bson.json_util import dumps
+```
+### Response
+```
+posts = list(db.post.find())
+return Response(dumps(posts), mimetype='application/json',status=200)
+```
