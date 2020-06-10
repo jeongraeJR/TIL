@@ -10,7 +10,8 @@ source venv/bin/activate
 - 프리젠테이션과 비즈니스 로직을 구분하는데 도움이 된다.
 - 응용 프로그램 패키지 안에 있는 템플릿 폴더에 저장된다.
 
-## 필요 라이브러리 설정
+## 패키지 관리 
+- nodeJS의 package.json 과 비슷
 - 개발환경 셋팅 후 requirements.txt 를 만듦
 ```
 pip3 list > requirements.txt
