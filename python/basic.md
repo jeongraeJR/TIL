@@ -14,10 +14,6 @@ source venv/bin/activate
 - nodeJS의 package.json 과 비슷
 - 개발환경 셋팅 후 requirements.txt 를 만듦
 ```
-pip3 list > requirements.txt
-```
-또는
-```
 pip3 freeze > requirements.txt
 ```
 - requirements.txt를 사용하여 필요한 패키지 한꺼번에 다운로드
