@@ -17,3 +17,6 @@ response = make_response({'items': json.loads(dumps(docs))})
 response.status_code = 200
 return response
 ```
+
+## 참고
+https://stackoverflow.com/questions/16586180/typeerror-objectid-is-not-json-serializable
