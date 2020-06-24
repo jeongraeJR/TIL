@@ -1,11 +1,11 @@
 ## SSL Handshake
-###1. Client Hello
+### 1. Client Hello
 클라이언트가 서버에 접속한 상태이며 다음과 같은 정보들을 보낸다.
 - 세션키 생성을 위한 Random number
 - 클라이언트가 지원하는 암호화 방식
 - 세션id
 
-###2. Server Hello
+### 2. Server Hello
 클라이언트에 대한 응답으로 다음과 같은 정보들을 보낸다.
 - 세션키 생성을 위한 Random number
 - 클라이언트가 보낸 암호화 방식 중 서버가 선택한 값
