@@ -15,3 +15,15 @@ COPY . .
 
 CMD ["pm2-runtime","start","ecosystem.config.js"]
 ```
+
+## Python Flask Docker화 예시
+
+```
+FROM python
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 5000
+ENV FLASK_APP start.py
+CMD ["flask", "run","--host=0.0.0.0"]
+```
