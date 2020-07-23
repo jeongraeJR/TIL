@@ -16,5 +16,30 @@ myEmitter.on('event', () => {
 myEmitter.emit('event');
 ```
 
+## Passing arguments and this to listeners
+eventEmitter.emit() 메소드는 리스너 함수에 전달될 임의의 arguments 집합을 허용한다. 리스너 함수가 호출될때 this키워드는 의도적으로 리스너 함수가 연결된 Event emitter 의 인스턴스를 참조하도록 설정된다.
+
+```
+const myEmitter = new MyEmitter();
+myEmitter.on('event', function(a, b) {
+  console.log(a, b, this, this === myEmitter);
+  // Prints:
+  //   a b MyEmitter {
+  //     domain: null,
+  //     _events: { event: [Function] },
+  //     _eventsCount: 1,
+  //     _maxListeners: undefined } true
+});
+myEmitter.emit('event', 'a', 'b');
+```
+ES6의 화살표 함수를 리스너로 사용할 수 있다. 하지만 사용하게되면 this 키워드는 더이상 Evnet Emitter 인스턴스를 참조하지 않는다.
+```
+const myEmitter = new MyEmitter();
+myEmitter.on('event', (a, b) => {
+  console.log(a, b, this);
+  // Prints: a b {}
+});
+myEmitter.emit('event', 'a', 'b');
+```
 # 참고
 https://nodejs.org/api/events.html
