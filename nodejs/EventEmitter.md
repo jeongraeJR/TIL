@@ -41,5 +41,19 @@ myEmitter.on('event', (a, b) => {
 });
 myEmitter.emit('event', 'a', 'b');
 ```
+## Handling events only once
+eventEmitter.on() 함수를 사용하여 등록된 리스너는 해당 이름의 이벤트가 발생할때마다 호출된다. 그런데 eventEmitter.once() 함수를 사용하면 특정 이벤트에 대해서 한 번만 호출되는 리스너를 등록할 수 있다. 한 번 이벤트가 발생하면 리스너는 등록해제된다음 호출된다.
+```
+const myEmitter = new MyEmitter();
+let m = 0;
+myEmitter.once('event', () => {
+  console.log(++m);
+});
+myEmitter.emit('event');
+// Prints: 1
+myEmitter.emit('event');
+// Ignored
+```
+
 # 참고
 https://nodejs.org/api/events.html
