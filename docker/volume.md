@@ -18,5 +18,18 @@
 - Docker Host 또는 컨테이너내의 디스크에서 데이터가 유지되지 않음.
 - 컨테이너의 생명주기와 맞춰서 데이터를 보존하고자할때 사용한다.
 
+### Docker-Compose 사용예시
+```
+  mongodb:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db 
+    networks:
+```
+
+
 # 참고 
 https://medium.com/dtevangelist/docker-%EA%B8%B0%EB%B3%B8-5-8-volume%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-data-%EA%B4%80%EB%A6%AC-9a9ac1db978c
