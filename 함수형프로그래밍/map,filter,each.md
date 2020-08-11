@@ -104,3 +104,28 @@ function _map(list, mapper){
     return new_list;
 }
 ```
+
+## 메소드와 순수 함수의 차이
+- jquery 객체 또는 querySelectorAll 로 받아온 객체는 Array가 아니라 array like 객체이다.
+- Array가 아니기 때문에 사용할 수 없다.
+```
+console.log(
+    document.querySelectorAll('*').map(function(node){
+        return node.nodeName;
+    })
+)
+
+>> Uncaught TypeError: document.querySelectorAll(...).map is not a function
+
+```
+
+### 순수 함수
+- 배열이 아닌 값이어도 출력
+- 순수 함수로 만드는 기법이 메소드보다 다형성면에서 좀 더 좋은 점이 있다.
+```
+console.log(
+    _map(document.querySelectorAll('*'),function(node){
+        return node.nodeName;
+    })
+);
+```
