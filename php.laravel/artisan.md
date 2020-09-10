@@ -7,3 +7,8 @@ php artisan serve --host=[host] --port=[port]
 ```
 php artisan make:controller [ControllerName] 
 ```
+
+### Component 생성
+```
+php artisan make:component [ComponentName]
+```
